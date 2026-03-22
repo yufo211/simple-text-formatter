@@ -1,3 +1,5 @@
+// TODO: テストケースをWeb UIで処理を実装するときに追加する
+
 import { describe, expect, it } from "vitest";
 import { formatText } from "../src";
 import type { ReplacementSchema } from "../src/types/replacementSchema";
