@@ -56,7 +56,6 @@ type Process = ReplaceProcess | HalfToFullProcess | FullToHalfProcess;
  */
 interface ReplacementSchema {
   schemaVersion: SchemaVersion;
-  label: string;
   processes: Process[];
 }
 
