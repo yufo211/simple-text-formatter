@@ -8,8 +8,36 @@ import type { ReplacementSchema } from "./types/replacementSchema";
  * @returns 整形済みテキスト
  */
 export const formatText = (text: string, config: ReplacementSchema): string => {
-  console.log(config);
-  return text.trim().toUpperCase();
+  let result = text;
+
+  config.processes.forEach((process) => {
+    if (!process.enabled) {
+      return;
+    }
+
+    switch (process.type) {
+      case "replace":
+        if (process.useRegex) {
+          const re = new RegExp(process.from, "g");
+          result = result.replaceAll(re, process.to);
+        } else {
+          result = result.replaceAll(process.from, process.to);
+        }
+        break;
+      case "full-to-half":
+        result = "b";
+        break;
+      case "half-to-full":
+        result = "c";
+        break;
+      default: {
+        const _exhaustiveCheck: never = process;
+        throw new Error("Invalid type has detected calling `formatText`");
+      }
+    }
+  });
+
+  return result;
 };
 
 export function sum(a: number, b: number) {
