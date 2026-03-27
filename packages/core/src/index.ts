@@ -1,4 +1,4 @@
-import type { ReplacementSchema } from "./types/replacementSchema";
+import type { Process, ReplacementSchema } from "./types/replacementSchema";
 import { convertFullToHalf, convertHalfToFull } from "./utils/convertText";
 
 /**
@@ -8,7 +8,7 @@ import { convertFullToHalf, convertHalfToFull } from "./utils/convertText";
  * @param config 整形の設定オブジェクト
  * @returns 整形済みテキスト
  */
-export const formatText = (text: string, config: ReplacementSchema): string => {
+const formatText = (text: string, config: ReplacementSchema): string => {
   let result = text;
 
   config.processes.forEach((process) => {
@@ -32,7 +32,6 @@ export const formatText = (text: string, config: ReplacementSchema): string => {
         result = convertHalfToFull(result, process.target);
         break;
       default: {
-        const _exhaustiveCheck: never = process;
         throw new Error("Invalid type has detected calling `formatText`");
       }
     }
@@ -40,3 +39,6 @@ export const formatText = (text: string, config: ReplacementSchema): string => {
 
   return result;
 };
+
+export type { Process, ReplacementSchema };
+export { formatText };
