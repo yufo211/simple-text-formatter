@@ -131,7 +131,7 @@ function ConvertControlPanelBase<
 }
 
 const processConfigTitles: Record<Process["type"], string> = {
-  replace: "置換",
+  replace: "テキスト置換",
   "full-to-half": "全角 → 半角",
   "half-to-full": "半角 → 全角",
 };
