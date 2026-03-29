@@ -189,8 +189,7 @@ export default function ProcessConfigCard({
       ComponentNode = (
         <ReplaceControlPanel
           process={process as ReplaceProcess}
-          // biome-ignore lint/suspicious/noExplicitAny: type erasure for onChange
-          onChange={updateProcess as any}
+          onChange={updateProcess}
         />
       );
       break;
@@ -198,8 +197,7 @@ export default function ProcessConfigCard({
       ComponentNode = (
         <FullToHalfControlPanel
           process={process as FullToHalfProcess}
-          // biome-ignore lint/suspicious/noExplicitAny: type erasure for onChange
-          onChange={updateProcess as any}
+          onChange={updateProcess}
         />
       );
       break;
@@ -207,8 +205,7 @@ export default function ProcessConfigCard({
       ComponentNode = (
         <HalfToFullControlPanel
           process={process as HalfToFullProcess}
-          // biome-ignore lint/suspicious/noExplicitAny: type erasure for onChange
-          onChange={updateProcess as any}
+          onChange={updateProcess}
         />
       );
       break;
