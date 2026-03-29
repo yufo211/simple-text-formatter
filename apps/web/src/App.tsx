@@ -12,29 +12,7 @@ import {
 
 function App() {
   const [inputText, setInputText] = useState<string>("");
-  const [processes, setProcesses] = useState<Process[]>([
-    {
-      id: "8a4219ad-90d7-41ef-9b6a-ffb030efec1d",
-      enabled: true,
-      type: "replace",
-      from: "せん",
-      to: "すん",
-      useRegex: false,
-    },
-    {
-      id: "8a4219ad-90d7-41ef-9b6a-ffb030efec1c",
-      label: "半角カタカナを全角カタカナにします。",
-      enabled: true,
-      type: "half-to-full",
-      target: {
-        alphabet: false,
-        number: false,
-        katakana: true,
-        space: false,
-        symbol: false,
-      },
-    },
-  ]);
+  const [processes, setProcesses] = useState<Process[]>([]);
   const convertedText = useMemo(() => {
     const config = {
       schemaVersion: 1 as const,

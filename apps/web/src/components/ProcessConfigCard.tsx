@@ -133,8 +133,8 @@ function ConvertControlPanelBase<
 
 const processConfigTitles: Record<Process["type"], string> = {
   replace: "テキスト置換",
-  "full-to-half": "全角 → 半角",
-  "half-to-full": "半角 → 全角",
+  "full-to-half": "全角から半角に変換",
+  "half-to-full": "半角から全角に変換",
 };
 
 export default function ProcessConfigCard({
