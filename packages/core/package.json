@@ -9,7 +9,7 @@
     "test": "vitest"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.8",
+    "@biomejs/biome": "2.4.9",
     "@types/moji": "^0.5.3",
     "vitest": "^4.1.0"
   },
